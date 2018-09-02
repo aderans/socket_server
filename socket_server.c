@@ -60,6 +60,7 @@ tcp_receiver(int serv_sock, char *errmsg)
 
         /* 受信メッセージを標準出力する */
         fprintf(stdout, "message: %s\n", buff);
+    	memset(buff,'\0',sizeof(buff));
 
         /* クライアントからのサーバ終了命令を確認する */
         if(strcmp(buff, "terminate") == 0){
